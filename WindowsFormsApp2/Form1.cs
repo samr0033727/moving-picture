@@ -17,32 +17,54 @@ namespace WindowsFormsApp2
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void right_Click(object sender, EventArgs e)
         {
-            pictureBox1.Location = new Point(pictureBox1.Location.X + 5, pictureBox1.Location.Y);
+            if (pictureBox1.Location.X + 5 < ClientRectangle.Width - pictureBox1.Width)
+            {
+                pictureBox1.Location = new Point(pictureBox1.Location.X + 5, pictureBox1.Location.Y);
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void up_Click(object sender, EventArgs e)
         {
-            pictureBox1.Location = new Point(pictureBox1.Location.X , pictureBox1.Location.Y - 5);
+            pictureBox1.Location = new Point(pictureBox1.Location.X, pictureBox1.Location.Y - 5);
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void left_Click(object sender, EventArgs e)
         {
-            pictureBox1.Location = new Point(pictureBox1.Location.X - 5, pictureBox1.Location.Y);
+            if (pictureBox1.Location.X > 0)
+            {
+                pictureBox1.Location = new Point(pictureBox1.Location.X - 5, pictureBox1.Location.Y);
+            }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void down_Click(object sender, EventArgs e)
         {
-            pictureBox1.Location = new Point(pictureBox1.Location.X , pictureBox1.Location.Y + 5);
+            pictureBox1.Location = new Point(pictureBox1.Location.X, pictureBox1.Location.Y + 5);
         }
 
-        private async void button5_Click(object sender, EventArgs e)
+        private async void square_Click(object sender, EventArgs e)
         {
-            pictureBox1.Location = new Point(pictureBox1.Location.X + 5, pictureBox1.Location.Y);
+            pictureBox1.Location = new Point(pictureBox1.Location.X + 20, pictureBox1.Location.Y);
             await Task.Delay(500);
-            pictureBox1.Location = new Point(pictureBox1.Location.X - 5, pictureBox1.Location.Y);
+            pictureBox1.Location = new Point(pictureBox1.Location.X, pictureBox1.Location.Y + 20);
             await Task.Delay(500);
+            pictureBox1.Location = new Point(pictureBox1.Location.X - 20, pictureBox1.Location.Y);
+            await Task.Delay(500);
+            pictureBox1.Location = new Point(pictureBox1.Location.X, pictureBox1.Location.Y - 20);
+            await Task.Delay(500);
+            pictureBox1.Location = new Point(pictureBox1.Location.X + 20, pictureBox1.Location.Y);
+        }
+
+        private async void triangle_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Location = new Point(pictureBox1.Location.X + 40, pictureBox1.Location.Y + 40);
+            await Task.Delay(500);
+            pictureBox1.Location = new Point(pictureBox1.Location.X - 80, pictureBox1.Location.Y);
+            await Task.Delay(500);
+            pictureBox1.Location = new Point(pictureBox1.Location.X + 40, pictureBox1.Location.Y - 40);
         }
     }
 }
+      
+   
